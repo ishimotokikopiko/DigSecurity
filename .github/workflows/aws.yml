@@ -33,6 +33,7 @@ jobs:
         password: '${{ secrets.CI_REGISTRY_PASSWORD }}'
 
     - name: Build and push
+      run: echo "repo=$CI_REGISTRY:$DOCKER_TAG"
       uses: docker/build-push-action@v4
       with:
         push: true
