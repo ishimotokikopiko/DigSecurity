@@ -32,8 +32,10 @@ jobs:
         username: ${{ secrets.CI_REGISTRY_USER }}
         password: '${{ secrets.CI_REGISTRY_PASSWORD }}'
 
-    - name: Build and push
+    - name: Print Debug Info
       run: echo "repo=$CI_REGISTRY:$DOCKER_TAG"
+
+    - name: Build and push
       uses: docker/build-push-action@v4
       with:
         push: true
