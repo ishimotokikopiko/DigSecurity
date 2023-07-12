@@ -33,11 +33,11 @@ jobs:
         password: ${{secrets.CI_REGISTRY_PASSWORD}}
 
     - name: Print Debug Info
-      run: echo "repo=${{variables.CI_REGISTRY}}:${{variables.DOCKER_TAG}}"
+      run: echo "repo=${{vars.CI_REGISTRY}}:${{vars.DOCKER_TAG}}"
       run: pwd; ls -la
 
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: $CI_REGISTRY:$DOCKER_TAG
+        tags: ${{vars.CI_REGISTRY}}:${{vars.DOCKER_TAG}}
