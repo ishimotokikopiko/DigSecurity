@@ -42,4 +42,4 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: ${{vars.CI_REGISTRY}}:${{vars.DOCKER_TAG}}
+        tags: ${{secrets.CI_REGISTRY_USER}}/${{vars.CI_REGISTRY_IMAGE}}:${{vars.DOCKER_TAG}}
