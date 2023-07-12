@@ -41,7 +41,7 @@ jobs:
     - name: Build and push backend
       uses: docker/build-push-action@v4
       with:
-        context: "{{defaultContext}}:backend"
+        build-contexts: ./backend
         push: true
         tags: ${{secrets.CI_REGISTRY_USER}}/${{vars.CI_REGISTRY_IMAGE}}:${{vars.DOCKER_TAG}}
         file: ./backend/Dockerfile
