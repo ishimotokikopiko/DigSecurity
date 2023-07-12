@@ -1,0 +1,17 @@
+certifi==2018.10.15
+chardet==3.0.4
+Click==7.0
+Flask==1.0.2
+Flask-Cors==3.0.6
+idna==2.7
+itsdangerous==1.1.0
+Jinja2==2.10
+MarkupSafe==1.0
+numpy==1.15.3
+Pillow==9.0.1
+requests==2.20.0
+six==1.11.0
+torch
+torchvision==0.2.1
+urllib3
+Werkzeug
