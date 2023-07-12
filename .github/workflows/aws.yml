@@ -33,7 +33,7 @@ jobs:
         password: ${{secrets.CI_REGISTRY_PASSWORD}}
 
     - name: Print Debug Info
-      run: echo "repo=${{variables.CI_REGISTRY}}:${{variables.$DOCKER_TAG}}"
+      run: echo "repo=${{variables.CI_REGISTRY}}:${{variables.DOCKER_TAG}}"
       run: pwd; ls -la
 
     - name: Build and push
