@@ -43,7 +43,7 @@ jobs:
       with:
         context: ./backend
         push: true
-        tags: ${{secrets.CI_REGISTRY_USER}}/${{vars.CI_REGISTRY_IMAGE}}:${{vars.DOCKER_TAG}}
+        tags: ${{secrets.CI_REGISTRY_USER}}/${{vars.CI_REGISTRY_IMAGE_BACKEND}}:${{vars.DOCKER_TAG}}
         file: ./backend/Dockerfile
 
     - name: Build and push frontend
@@ -51,5 +51,5 @@ jobs:
       with:
         context: ./frontend
         push: true
-        tags: ${{secrets.CI_REGISTRY_USER}}/${{vars.CI_REGISTRY_IMAGE}}:${{vars.DOCKER_TAG}}
+        tags: ${{secrets.CI_REGISTRY_USER}}/${{vars.CI_REGISTRY_IMAGE_FRONTEND}}:${{vars.DOCKER_TAG}}
         file: ./frontend/Dockerfile
