@@ -38,10 +38,20 @@ jobs:
         pwd
         ls -la
 
-    - name: Build and push backend
+    # - name: Build and push backend
+    #   uses: docker/build-push-action@v4
+    #   with:
+    #     context: ./backend
+    #     push: true
+    #     tags: ${{secrets.CI_REGISTRY_USER}}/${{vars.CI_REGISTRY_IMAGE}}:${{vars.DOCKER_TAG}}
+    #     file: ./backend/Dockerfile
+    #     platforms: linux/arm64,linux/arm64
+
+    - name: Build and push frontend
       uses: docker/build-push-action@v4
       with:
-        context: ./backend
+        context: ./frontend
         push: true
         tags: ${{secrets.CI_REGISTRY_USER}}/${{vars.CI_REGISTRY_IMAGE}}:${{vars.DOCKER_TAG}}
-        file: ./backend/Dockerfile
+        file: ./frontend/Dockerfile
+        platforms: linux/arm64,linux/arm64
