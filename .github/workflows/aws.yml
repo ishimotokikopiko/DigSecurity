@@ -38,8 +38,11 @@ jobs:
         pwd
         ls -la
 
-    - name: Build and push
+    - name: Build and push backend
       uses: docker/build-push-action@v4
       with:
+        context: .
         push: true
         tags: ${{secrets.CI_REGISTRY_USER}}/${{vars.CI_REGISTRY_IMAGE}}:${{vars.DOCKER_TAG}}
+        build-args: |
+            DOCKERFILE_PATH=./backend/Dockerfile
