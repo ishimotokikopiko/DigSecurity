@@ -1,0 +1,14 @@
+.idea_modules/
+.idea/
+
+*.ovpn
+*.log
+
+.LSOverride
+.DS_Store
+.AppleDouble
+
+.terraform/
+.terragrunt-cache/
+*.tfstate
+*.out
